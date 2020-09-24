@@ -150,3 +150,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,java,java-web,windows,test
+
+.classpath
+.factorypath
+.project
+.settings/*
