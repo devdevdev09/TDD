@@ -1,4 +1,4 @@
-package com.tddb.chap01.chap02;
+package com.tddb.chap02;
 
 public class Calculator {
     public static int plus(int a1, int a2){

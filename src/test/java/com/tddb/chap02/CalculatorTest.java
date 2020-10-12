@@ -2,7 +2,7 @@ package com.tddb.chap02;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.tddb.chap01.chap02.Calculator;
+import com.tddb.chap02.Calculator;
 
 import org.junit.jupiter.api.Test;
 
