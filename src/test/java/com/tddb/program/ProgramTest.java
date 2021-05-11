@@ -61,6 +61,12 @@ public class ProgramTest {
         int num6 = program.getDistance("9","2");
         assertEquals(num6, 3);
 
+        int num7 = program.getDistance("4","5");
+        assertEquals(num7, 1);
+
+        int num8 = program.getDistance("3","5");
+        assertEquals(num8, 2);
+
     }
 }
 

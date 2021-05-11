@@ -2,24 +2,70 @@ package com.tddb.program;
 
 public class Program {
 
+    public static void main(String[] args) {
+        int[] numbers = new int[]{1,3,4,5,8,2,1,4,5,9,5};
+        String hand = "right";
+
+        Program pro = new Program();
+        String result = pro.solution(numbers, hand);
+        System.out.println(result);
+    }
+
     public String solution(int[] numbers, String hand) {
         String answer = "";
 
         String startL = "*";
         String startR = "#";
 
+        int left = 0;
+        int right = 0;
+
         for(int num : numbers){
-            answer += getLeftRight(num, 
-                                Integer.parseInt(startL), 
-                                Integer.parseInt(startR),
-                                hand);
+            String re = getLR(num);
+            if(!re.equals("X")){
+                if(re.equals("L")){
+                    startL = String.valueOf(num);
+                }else{
+                    startR = String.valueOf(num);
+                }
+
+                answer += re;
+                
+            }else{
+                // left = getDistance(String.valueOf(num), startL);
+                // right = getDistance(String.valueOf(num), startR);
+
+                // if(left > right){
+                //     startR = String.valueOf(num);
+                // }else if(left < right){
+                //     startL = String.valueOf(num);
+                // }else{
+                //     if(hand.equals("right")){
+                //         startR = String.valueOf(num);
+                //     }else{
+                //         startL = String.valueOf(num);
+                //     }
+                // }
+
+                answer += getLeftRight(num, startL,startR, hand);
+            }
         }
 
         return answer;
 
     }
 
-    public String getLeftRight(int num, int left, int right, String hand){
+    public String getLR(int num){
+        if(num == 1 || num == 4 || num == 7){
+            return "L";
+        }else if(num == 3 || num == 6 || num == 9){
+            return "R";
+        }else{
+            return "X";
+        }
+    }
+
+    public String getLeftRight(int num, String left, String right, String hand){
         if(num == 1 || num == 4 || num == 7){
             return "L";
         }else if(num == 3 || num == 6 || num == 9){
